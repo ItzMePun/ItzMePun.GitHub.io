@@ -365,4 +365,14 @@ footer li a:hover{
         display: flex;
         flex-direction: column-reverse;
     }
+
+    header {
+        height: 30vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #section-divider div {
+        height: 5rem;
+    }
 }
