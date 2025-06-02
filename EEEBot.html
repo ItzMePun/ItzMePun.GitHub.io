@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="portfolio_pages/EEEBot.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pun Phanasomburna</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <!---------- ICON SCOUT ---------->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!---------- GOOGLE FONTS ----------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--======================= NAV BAR =======================-->
+    <nav>
+        <div class="container nav_container">
+            <a href="index.html" class="nav_logo">
+                <h3>LOGO</h3>
+            </a>
+            <ul class="nav_menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#PORTFOLIO">PORTFOLIO</a></li>
+                <li><a href="index.html#SERVICES">SERVICES</a></li>
+                <li><a href="index.html#ABOUT">ABOUT</a></li>
+            </ul>
+            <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+            <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+        </div>
+    </nav>
+
+    <!--======================= HEADER =======================-->
+
+    <header>
+        <div class="container header_container">
+            <span>
+                <h1>EEEBot</h1>
+            </span>
+        </div>
+    </header>
+
+    <section id="section-divider">
+        <div class="container"></div>
+    </section>
+
+    <!--======================= MAIN BODY =======================-->
+
+    <section class="main_description">
+        <div class="container description_container">
+            <div class="block block1">
+                <div class="block1-left"><img src="portfolio_pages/EEEBot_imgs/car_img1.jpeg" alt="chula img"></div>
+                <div class="block1-right">
+                    <h3>The Introduction</h3>
+                    <p>
+                        The EEEBot is a coursework project for the first year of my Electronic 
+                        and Computer Engineering degree. The EEEBot is a robotic car that is 
+                        controlled by an ESP32. The project spanend the course of the academic year 
+                        and was work on in 5 separate lab weeks. From start to finish, it began 
+                        as a simple car that can be controlled by a pre loaded program and given 
+                        more capabilities through various sensors along the way. Prior to this 
+                        project I have had very limited experiece with electronic components 
+                        and while I understood the theory, I was lacking in practical experience.
+                        The project helped me develop my skills and will hopefully help me with 
+                        various projects in the future.
+                    </p>
+                </div>
+            </div>
+
+            <div class="block block2">
+                <div class="block2-left">
+                    <h3>Blind Maze Navigation</h3>
+                    <p>
+                        The first sensors added to the EEEBot after it's contruction was a sonar 
+                        and an MPU. The sonar used was an HC-SR04 sonar sensor that was used to 
+                        give it the ability to measure it's distance to a nearby object in front 
+                        using sonar technology. The MPU used gave the EEEBot the ability to read 
+                        angular velocity as well as acceleration. This gave it the ability to 
+                        keep track of it's orientation. Using these two sensors, the goal for the 
+                        week was to navigate a maze without crashing by hugging the left wall. 
+                        This is a common method to solve a simple maze given that it does not need 
+                        to be optimized. This was accomplished smoothly.
+                    </p>
+                </div>
+                <div class="block2-right"><img src="portfolio_pages/EEEBot_imgs/IMG_0120 (1).jpeg" alt="chula img"></div>
+            </div>
+
+            <div class="block block3">
+                <div class="block3-left double_img">
+                    <img src="portfolio_pages/EEEBot_imgs/IMG_2003.jpeg" alt="img">
+                    <img src="portfolio_pages/EEEBot_imgs/IMG_1982.jpeg" alt="img">
+                </div>
+                <div class="block3-right">
+                    <h4>Line Following</h4>
+                    <p>
+                        Next, the EEEBot was equiped with an array of 5 photodiodes. These photo diodes 
+                        would capture a reflected infrared ray from the ground and use this as input to 
+                        perform line following. The outputs from the photodiodes would go through a 
+                        transimpedance amplifier to make the readings more clear then go through an ADC.
+                        The inputs from each sensor is weighted and then average to get a value to 
+                        represent the diviation from the line. This value is then used to produce a 
+                        weight value of how far the servo on the EEEBot should turn to correct it's path 
+                        and perform said function. Out of all the weeks, this was the most successful, 
+                        being able to perfectly follow the line and demonstrated it's workings.
+                    </p>
+                </div>
+            </div>
+
+            <div class="block block4">
+                <div class="block4-left">
+                    <h3>Remote Control</h3>
+                    <p>
+                        In the next project week, a raspberry pi was integrated into the system of the 
+                        EEEBot. This allowed for wireless communication and so wireless controll from 
+                        a dashboard that can be accessed through a browser. This was straight forward, 
+                        using the MQTT service which is designed for high latency wireless communications.
+                    </p>
+                </div>
+                <div class="block4-right double_img">
+                    <img src="portfolio_pages/EEEBot_imgs/Screenshot 2025-03-09 102315.png" alt="img">
+                    <img src="portfolio_pages/EEEBot_imgs/Screenshot 2025-03-10 155456.png" alt="img">
+                </div>
+            </div>
+
+            <div class="block block5">
+                <div class="block5-left">
+                    <img src="portfolio_pages/EEEBot_imgs/Screenshot 2025-03-12 103744.png" alt="img">
+                    <img src="portfolio_pages/EEEBot_imgs/Screenshot 2025-03-11 120234.png" alt="img">
+                </div>
+                <div class="block5-right">
+                    <h4>Symbol Recognition</h4>
+                    <p>
+                        In the final lab week, using a camera connected to the raspberry pi, the EEEBot 
+                        was given the ability to perform symbol recognition. The camera feed would be 
+                        used as input and the program would give an output that can be used to controll 
+                        the EEEBot to move accordingly. Each frame of the input would first be filtered 
+                        to leave only the relavent information, filtering out noise. The result would be 
+                        used to create contours and get a set of coordinates to what should be the four 
+                        corners of the symbol in frame. The original image is then warped to these coordinates 
+                        and compared to a template of the symbols to produce a percentage match. This value 
+                        determines which symbol is being seen or if a symbol is even in frame. This went 
+                        well when in a controlled environment with proper lighting but failed to perform 
+                        in a range of settings. 
+                    </p>
+                </div>
+            </div>
+
+            <div class="block block6">
+                <h4>Conclusion</h4>
+                <p>
+                    The EEEBot project for my coursework has taught me many things over the course of 
+                    the year. This I consider to be my first proper intruction to electronics where 
+                    I was able to learn step by step. While the EEEBot is relatively rudimentary in 
+                    my opinion, using outdated software at times, it did serve it's purpose as an intro 
+                    to the course. Using these skills, I plan to improve my previous projects over the 
+                    course of the summer as well as embark on to new endevours. The EEEBot worked for 
+                    most part as intended and was able to do the simple things it was required to 
+                    albeit in a proof of concept kind of way and nowhere near industry level, the skills 
+                    I learned will help me in the future. The project required me to write 3 technical 
+                    reports which can be seen below.
+                </p>
+                <div>
+                    <p>
+                        <a href="portfolio_pages/EEEBot_imgs/Indivisual Report 1.pdf" target="_blank">Report 1, </a>
+                        <a href="portfolio_pages/EEEBot_imgs/Indivisual Report 2.pdf" target="_blank">Report 2, </a>
+                        <a href="portfolio_pages/EEEBot_imgs/Indivisual Report 3.pdf" target="_blank">Report 3</a>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!--======================= FOOTER =======================-->
+
+    <footer>
+        <div class="container footer_container">
+            <h4>Contact Information</h4>
+            <ul>
+                <li>Email : <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=PunPhanasomburna@gmail.com">PunPhanasomburna@gmail.com</a></li>
+                <li>instagram : <a href="https://www.instagram.com/01_pun_10/">01_pun_10</a></li>
+                <li>LinkedIn : <a href="https://www.linkedin.com/in/pun-phanasomburna-87325a325/">Pun Phanasomburna</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="Project_sums.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
