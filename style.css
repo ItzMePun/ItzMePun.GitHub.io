@@ -506,19 +506,25 @@ header {
     font-size: 0.6rem;
 }
 
-.showcase_card #education li{
-    font-size: 0.9rem;
-    margin-top: 1rem;
+.showcase_card #education li, .showcase_card #certificates li{
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
 }
 
-.showcase_card #education a {
+.showcase_card #education a, #certificates a {
     color: var(--color-border);
     transition: all 400ms ease;
 }
 
-.showcase_card #education a:hover {
+.showcase_card #education a:hover, #certificates a:hover{
     color: var(--color-light);
+    font-weight: bold;
 }
+
+.showcase_card #certificates_header {
+    margin-top: 2rem;
+}
+
 
 /* ===================== FOOTER =====================*/
 
