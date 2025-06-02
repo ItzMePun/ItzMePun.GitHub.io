@@ -909,7 +909,7 @@ footer li a:hover{
     }
 
     .service_card .btn {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
     }
 
     .service_card .btn:hover {
@@ -928,5 +928,9 @@ footer li a:hover{
         background-color: var(--color-very-dark);
         box-shadow: 0 0 0.5rem rgb(16, 118, 115);
         padding: 0.8rem;
+    }
+
+    .showcase_card ul {
+        margin: 0;
     }
 }
