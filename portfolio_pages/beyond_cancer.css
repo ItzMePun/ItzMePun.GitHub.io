@@ -399,4 +399,14 @@ footer li a:hover{
     .bc_block {
         grid-template-columns: 100%;
     }
+
+    header {
+        height: 30vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #section-divider div {
+        height: 5rem;
+    }
 }
