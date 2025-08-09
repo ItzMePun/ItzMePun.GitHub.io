@@ -101,5 +101,18 @@ const exp_summaries = [
         Shadowed lead market analyst
         Attend weekly meetings between departments`,
         link: "https://www.trinitythai.com"
+    },
+
+    {
+        title: "Software Developer Internship",
+        company: "SpiceRoads Cycling",
+        img: "Experience_logos/spiceroads_logo.png",
+        dates: "Jun 2025 - Present",
+        summary: `
+        Helped develope and build the backend frame work for the
+        interface to be used by other employees. This project has 
+        allowed me to problem solve and learn technical best practices 
+        while improving my skills with python, javascript and SQL`,
+        link: "https://www.spiceroads.com"
     }
 ]
