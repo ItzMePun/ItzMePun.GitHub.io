@@ -1,5 +1,20 @@
+import fs from "node:fs/promises";
+import path from "node:path";
 import { notFound } from "next/navigation";
 import { getProjectByName } from "@/lib/projects";
+
+export async function generateStaticParams(): Promise<Array<{ id: string }>> {
+    const projectsDir = path.join(process.cwd(), "content", "projects");
+    const files = await fs.readdir(projectsDir);
+
+    return files
+        .filter((file) => file.endsWith(".project.md"))
+        .map((file) => ({
+            id: file.replace(/\.project\.md$/, ""),
+        }));
+}
+
+export const dynamicParams = false;
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
     const params = await props.params;
