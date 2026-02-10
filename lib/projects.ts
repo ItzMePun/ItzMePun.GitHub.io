@@ -4,7 +4,13 @@ import matter from "gray-matter";
 import { ProjectProps } from "@/lib/props";
 
 function resolveProjectFilename(project: string): string {
-	if (project.endsWith(".md")) return project;
+	// Accept:
+	// - "slug"                -> "slug.project.md"
+	// - "slug.project"        -> "slug.project.md"
+	// - "slug.project.md"     -> as-is
+	// - "slug.md"             -> as-is (if you ever use plain .md)
+	if (project.endsWith(".project.md") || project.endsWith(".project.mdx")) return project;
+	if (project.endsWith(".md") || project.endsWith(".mdx")) return project;
 	if (project.endsWith(".project")) return `${project}.md`;
 	return `${project}.project.md`;
 }
@@ -24,6 +30,16 @@ function normalizePictures(pictures: unknown): string[] {
 	return [];
 }
 
+// ✅ NEW: used by generateStaticParams() for static export
+export async function getAllProjectIds(): Promise<string[]> {
+	const projectsPath = path.join(process.cwd(), "content", "projects");
+	const files = await fs.readdir(projectsPath);
+
+	return files
+		.filter((file) => file.endsWith(".project.md") || file.endsWith(".project.mdx"))
+		.map((file) => file.replace(/\.project\.(md|mdx)$/, ""));
+}
+
 export async function getProjectByName(project: string): Promise<ProjectProps | null> {
 	const projectsPath = path.join(process.cwd(), "content", "projects");
 	const filename = resolveProjectFilename(project);
@@ -35,7 +51,7 @@ export async function getProjectByName(project: string): Promise<ProjectProps | 
 
 		return {
 			name: String(data["name"] ?? ""),
-			thumbnail: String(data["thumbnail"] ?? null),
+			thumbnail: String(data["thumbnail"] ?? ""), // ✅ avoid "null"
 			summary: String(data["summary"] ?? ""),
 			pictures: normalizePictures(data["pictures"]),
 			content,
@@ -48,29 +64,31 @@ export async function getProjectByName(project: string): Promise<ProjectProps | 
 
 export async function getAllProjects(): Promise<ProjectProps[]> {
 	const projectsPath = path.join(process.cwd(), "content", "projects");
+
 	try {
 		const files = await fs.readdir(projectsPath);
+
 		const projects = await Promise.all(
 			files
-				.filter(file => file.endsWith(".project.md"))
+				.filter((file) => file.endsWith(".project.md") || file.endsWith(".project.mdx"))
 				.map(async (file) => {
 					const filePath = path.join(projectsPath, file);
-					const fileContent = await fs.readFile(filePath, 'utf8');
+					const fileContent = await fs.readFile(filePath, "utf8");
 					const { data, content } = matter(fileContent);
+
 					return {
-						name: data['name'],
-						thumbnail: data['thumbnail'],
-						summary: data['summary'],
-						pictures: data['pictures'],
-						content: content
+						name: String(data["name"] ?? ""),
+						thumbnail: String(data["thumbnail"] ?? ""),
+						summary: String(data["summary"] ?? ""),
+						pictures: normalizePictures(data["pictures"]),
+						content,
 					};
 				})
-		)
+		);
 
 		return projects;
-
 	} catch (error) {
-		console.error(`Error reading project file: `, error);
+		console.error(`Error reading project files:`, error);
 		return [];
 	}
 }
