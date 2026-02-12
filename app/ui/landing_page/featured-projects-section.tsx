@@ -7,9 +7,9 @@ import { SectionProps } from "@/lib/props";
 import { getProjectByName } from "@/lib/projects";
 
 export default async function FeaturedProjectsSection({section_id, section_className}: SectionProps) {
-    const featured_projects_names = ["eeebot.project", "chula-ml-project.project", "trash-to-treasure.project"];
+    const featured_projects_slugs = ["eeebot", "chula-ml-project", "trash-to-treasure"];
     const featured_projects = await Promise.all(
-        featured_projects_names.map((projectName) => getProjectByName(projectName))
+        featured_projects_slugs.map((projectSlug) => getProjectByName(projectSlug))
     );
 
     return (
@@ -33,10 +33,10 @@ export default async function FeaturedProjectsSection({section_id, section_class
                 gap-10 md:gap-0
                 items-center
             `}>
-                {featured_projects_names.map((projectName, index) => (
+                {featured_projects_slugs.map((projectSlug, index) => (
                     <ProjectThumbnail
-                        key={projectName}
-                        name={projectName}
+                        key={projectSlug}
+                        slug={projectSlug}
                         project={featured_projects[index]}
                         className="w-[80%] md:w-[32.5%]"
                     />

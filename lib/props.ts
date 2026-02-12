@@ -14,6 +14,7 @@ export type SkillsCardsProps = {
 };
 
 export type ProjectProps = {
+	slug: string;
 	name: string;
 	thumbnail: string;
 	summary: string;
@@ -22,7 +23,7 @@ export type ProjectProps = {
 };
 
 export type ProjectThumbnailProps = {
-    name: string;
+    slug: string;
     project: ProjectProps | null;
     className?: string;
 };

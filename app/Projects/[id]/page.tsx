@@ -26,7 +26,11 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     }
 
     return (
-        <main>
+        <main
+            className={`
+                flex flex-col
+            `}
+        >
             <section className={`
                 pt-20 w-full h-dvh
                 bg-light-color-1
@@ -36,7 +40,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                 overflow-hidden
             `}>
                 <img 
-                    src={project.thumbnail}
+                    src={project?.thumbnail ?? null}
                     alt={project.name}
                     className="
                     w-full
@@ -47,7 +51,11 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                 w-full
                 aspect-video
                 bg-light-color-2
+                flex
             ">
+                <p className="text-dark-color-1 text-2xl">
+                    {project.content}
+                </p>
             </section>
         </main>
     );

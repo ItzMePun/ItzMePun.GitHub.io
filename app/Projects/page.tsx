@@ -21,9 +21,13 @@ export default async function Page() {
                 h-screen
                 p-20 pt-20
                 bg-light-color-2
+                flex
+                items-center
             `}
         >
-            something something
+            <h1 className="text-5xl">
+                Scroll down to see the list of projects I've completed so far
+            </h1>
         </section>
 
         <section className={`
@@ -35,8 +39,8 @@ export default async function Page() {
         `}>
             {projects.map((project) => (
                 <ProjectThumbnail 
-                    key={project.name}
-                    name={project.name}
+                    key={project.slug}
+                    slug={project.slug}
                     project={project}
                     className=""
                 />

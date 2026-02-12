@@ -1,7 +1,7 @@
-
 import { ProjectThumbnailProps } from "@/lib/props";
+import Link from "next/link";
 
-export default function ProjectThumbnail({ name, project, className }: ProjectThumbnailProps) {
+export default function ProjectThumbnail({ slug, project, className }: ProjectThumbnailProps) {
 
     return (
         <article className={`
@@ -22,9 +22,12 @@ export default function ProjectThumbnail({ name, project, className }: ProjectTh
                 "
             >
                 <div className="relative w-full">
-                    <h2 className="text-2xl font-semibold overflow-x-auto whitespace-nowrap no-scrollbar pr-6">
-                        {project?.name ?? name}
-                    </h2>
+                    <Link
+                        key={project?.slug ?? slug}
+                        href={`/Projects/${project?.slug ?? slug}`}
+                        className="text-2xl font-semibold overflow-x-auto whitespace-nowrap no-scrollbar pr-6">
+                        {project?.name ?? slug}
+                    </Link>
                     <span
                         className="
                             pointer-events-none
@@ -65,8 +68,8 @@ export default function ProjectThumbnail({ name, project, className }: ProjectTh
                     {project?.thumbnail ? (
                         <img
                             src={project.thumbnail}
-                            alt={project?.name ?? name}
-                            className="w-auto text-black"
+                            alt={project?.name ?? slug}
+                            className="w-auto text-black aspect-4/3"
                         />
                     ) : null}
                 </div>
