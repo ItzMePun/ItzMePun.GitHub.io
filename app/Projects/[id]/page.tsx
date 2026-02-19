@@ -2,6 +2,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { notFound } from "next/navigation";
 import { getProjectByName } from "@/lib/projects";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export async function generateStaticParams(): Promise<Array<{ id: string }>> {
     const projectsDir = path.join(process.cwd(), "content", "projects");
@@ -49,13 +51,18 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
             </section>
             <section className="
                 w-full
+                px-[10%]
+                py-[10%]
                 aspect-video
                 bg-light-color-2
-                flex
             ">
-                <p className="text-dark-color-1 text-2xl">
-                    {project.content}
-                </p>
+                <div className="markdown-body">
+                    <Markdown
+                        remarkPlugins={[remarkGfm]}
+                    >
+                        {project.content}
+                    </Markdown>
+                </div>
             </section>
         </main>
     );

@@ -39,3 +39,68 @@ body {
 	-ms-overflow-style: none;
 	scrollbar-width: 0;
 }
+
+.markdown-body {
+	width: 100%;
+}
+
+.markdown-body h1 { font-size: 2.25rem; font-weight: 700;}
+.markdown-body h2 { font-size: 1.75rem; font-weight: 700;}
+.markdown-body h3 { font-size: 1.35rem; font-weight: 700;}
+.markdown-body p { margin: 0.75rem 0; line-height: 1.8; }
+.markdown-body strong { font-weight: 700; }
+.markdown-body em { font-style: italic; }
+
+.markdown-body ul,
+.markdown-body ol {
+	margin: 0.75rem 0 0.75rem 1.5rem;
+	padding: 0;
+}
+
+.markdown-body li { margin: 0.3rem 0; }
+
+.markdown-body blockquote {
+	margin: 1rem 0;
+	padding: 0.75rem 1rem;
+	border-left: 4px solid var(--contrast-color);
+	background: color-mix(in srgb, var(--light-color-1) 75%, transparent);
+}
+
+.markdown-body code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 0.95em;
+	padding: 0.1rem 0.3rem;
+	border-radius: 6px;
+	background: color-mix(in srgb, var(--dark-color-1) 12%, transparent);
+}
+
+.markdown-body pre {
+	margin: 1rem 0;
+	padding: 1rem;
+	overflow-x: auto;
+	border-radius: 10px;
+	background: color-mix(in srgb, var(--dark-color-1) 18%, transparent);
+}
+
+.markdown-body pre code {
+	padding: 0;
+	background: transparent;
+}
+
+.markdown-body table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1rem 0;
+}
+
+.markdown-body th,
+.markdown-body td {
+	border: 1px solid color-mix(in srgb, var(--dark-color-1) 25%, transparent);
+	padding: 0.5rem 0.75rem;
+	text-align: left;
+}
+
+.markdown-body a {
+	color: var(--contrast-color);
+	text-decoration: underline;
+}
