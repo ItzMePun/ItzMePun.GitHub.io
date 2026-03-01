@@ -30,7 +30,7 @@ function handleEmailSubmit(event: FormEvent<HTMLFormElement>) {
 export default function ContactMeSection({ section_id, section_className }: SectionProps) {
     return (
         <section id={section_id} className={`
-            text-light-color-1
+            text-[#EAE0C8]
             flex flex-col md:flex-row
             scroll-mt-20
             ${section_className}
@@ -53,10 +53,10 @@ export default function ContactMeSection({ section_id, section_className }: Sect
                         const Icon = contact.icon;
                         const content = (
                             <>
-                                <Icon className="w-8 h-8 text-light-color-1"/>
+                                <Icon className="w-8 h-8"/>
                                 <div className="flex flex-col">
-                                    <span className="text-sm text-light-color-1/70">{contact.name}</span>
-                                    <span className="text-light-color-1">{contact.value}</span>
+                                    <span className="text-sm">{contact.name}</span>
+                                    <span className="">{contact.value}</span>
                                 </div>
                             </>
                         );

@@ -2,7 +2,7 @@
 export const NavLinks = {
     logo: { name: 'Logo', href: '/#hero', icon: '/nav/Pun logo.svg'},
     home: { name: 'Home', href: '/#hero', icon: '/nav/Home Button.svg'},
-    personal: { name: 'Personal', href: '/personal', icon: '/nav/Personal Button.svg'},
+    personal: { name: 'Personal', href: '/Personal', icon: '/nav/Personal Button.svg'},
     projects: { name: 'Projects', href: '/Projects', icon: '/nav/Projects Button.svg'},
     contact: { name: 'Contact', href: '/#contact', icon: '/nav/Contact Button.svg'},
 }

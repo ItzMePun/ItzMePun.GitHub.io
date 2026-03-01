@@ -33,9 +33,10 @@ export default async function Page() {
         <section className={`
             bg-light-color-1
             p-25
-            grid grid-cols-3
+            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
             w-full
             gap-4
+            overflow-hidden
         `}>
             {projects.map((project) => (
                 <ProjectThumbnail 

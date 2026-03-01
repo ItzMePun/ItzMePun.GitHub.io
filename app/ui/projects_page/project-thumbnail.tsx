@@ -21,11 +21,18 @@ export default function ProjectThumbnail({ slug, project, className }: ProjectTh
                     gap-3
                 "
             >
-                <div className="relative w-full">
+                <div className="relative w-full overflow-hidden hover:overflow-hidden group h-fit">
                     <Link
                         key={project?.slug ?? slug}
                         href={`/Projects/${project?.slug ?? slug}`}
-                        className="text-2xl font-semibold overflow-x-auto whitespace-nowrap no-scrollbar pr-6">
+                        className="
+                            text-2xl 
+                            font-semibold
+                            whitespace-nowrap 
+                            pr-6 
+                            group-hover:whitespace-normal 
+                            group-hover:warp-break-word
+                        ">
                         {project?.name ?? slug}
                     </Link>
                     <span
@@ -37,6 +44,7 @@ export default function ProjectThumbnail({ slug, project, className }: ProjectTh
                             bg-linear-to-l
                             from-dark-color-1
                             to-transparent
+                            group-hover:hidden
                         "
                         aria-hidden="true"
                     />

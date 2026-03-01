@@ -11,6 +11,9 @@
 	--contrast-color: #ED6A5A;
 
 	--text-color: #536878;
+
+	--navbar-height: 5rem;
+	--section-height: calc(100vh - var(--navbar-height));
 }
 
 @media (prefers-color-scheme: dark) {

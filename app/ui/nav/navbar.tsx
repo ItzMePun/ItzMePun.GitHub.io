@@ -9,7 +9,7 @@ export default function NavBar() {
             fixed
             flex
             bg-dark-color-2
-            h-20
+            h-(--navbar-height)
             w-full
             justify-between
             items-center
