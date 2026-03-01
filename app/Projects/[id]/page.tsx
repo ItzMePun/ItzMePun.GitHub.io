@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { getProjectByName } from "@/lib/projects";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -40,13 +41,13 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                 items-center
                 justify-center
                 overflow-hidden
+                relative
             `}>
-                <img 
-                    src={project?.thumbnail ?? null}
+                <Image 
+                    src={project?.thumbnail ?? "/placeholder.jpg"}
                     alt={project.name}
-                    className="
-                    w-full
-                    "
+                    fill
+                    className="object-contain"
                 />
             </section>
             <section className="

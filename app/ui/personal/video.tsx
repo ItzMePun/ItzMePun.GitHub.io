@@ -1,5 +1,6 @@
 
 import { SectionProps } from "@/lib/props";
+import Image from "next/image";
 
 export default function VideoSection({section_id, section_className}: SectionProps) {
     return (
@@ -13,11 +14,11 @@ export default function VideoSection({section_id, section_className}: SectionPro
         `}>
 
             <div className="
-                flex
+                flex flex-col
                 gap-10
             ">
                 <div className="
-                    w-[40%]
+                    w-full md:w-[40%]
                     flex flex-col
                     justify-start
                     gap-5
@@ -30,14 +31,11 @@ export default function VideoSection({section_id, section_className}: SectionPro
                 </div>
                 <div className="
                     aspect-video
-                    w-[60%]
+                    w-full md:w-[60%]
                     flex justify-center items-center
-                    p-5 
+                    p-0 md:p-5
                 ">
-                    <img src="" alt="Video Thumbnail" className="
-                        border
-                        w-full h-full
-                    "/>
+                    <Image src="/personal/video/" alt="Video Thumbnail" width={800} height={450} className="border"/>
                 </div>
             </div>
         </section>

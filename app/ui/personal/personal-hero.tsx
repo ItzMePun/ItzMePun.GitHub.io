@@ -1,5 +1,6 @@
 
 import { SectionProps } from "@/lib/props";
+import Image from "next/image";
 
 export default function PersonalHero({section_id, section_className}: SectionProps) {
     return (
@@ -7,7 +8,7 @@ export default function PersonalHero({section_id, section_className}: SectionPro
             ${section_className}
             pt-20 pb-0 px-0
             md:pt-30 md:pb-10 md:px-20
-            h-fit md:h-dvh
+            h-dvh
             flex flex-col md:flex-row
             md:justify-between
             items-center
@@ -15,9 +16,10 @@ export default function PersonalHero({section_id, section_className}: SectionPro
         `}>
             <h1 className="
                 absolute md:static
-                text-5xl
+                text-4xl md:text-5xl
                 h-fit
                 justify-center
+                text-center md:text-left
                 flex
                 font-[1000]
                 leading-20
@@ -26,20 +28,18 @@ export default function PersonalHero({section_id, section_className}: SectionPro
                 My more <br/>"Personal" moments
             </h1>
             <div className='
-                aspect-square md:aspect-auto
+                aspect-auto
                 w-full md:w-auto
                 h-auto md:h-full
                 drop-shadow-lg
                 overflow-hidden
                 bg-amber-50
+                relative
             '>
-                <img src="/personal/fireworks.jpg" alt="fireworks"
-                className="
-                    w-full
-                    h-full
-                    object-cover
-                    object-bottom
-                "/>
+                <Image src="/personal/fireworks.jpg" alt="fireworks"
+                width={500}
+                height={500}
+                className="w-full h-full object-cover object-bottom"/>
             </div>
         </section>
     )

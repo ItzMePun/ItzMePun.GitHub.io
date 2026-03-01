@@ -1,7 +1,12 @@
 
 import { SectionProps } from "@/lib/props";
+import { getGalleryLinks } from "@/lib/gallery";
+import GalleryFrame from "@/app/ui/personal/photography/gallery-frame";
+import Image from "next/image";
 
-export default function PhotographySection({ section_id, section_className }: SectionProps) {
+export default async function PhotographySection({ section_id, section_className }: SectionProps) {
+    const galleryItems = await getGalleryLinks();
+
     return (
         <section id={`${section_id}`} className={`
             ${section_className}
@@ -12,11 +17,15 @@ export default function PhotographySection({ section_id, section_className }: Se
             flex flex-col
             gap-5
         `}>
+            {/* Header */}
             <div className="h-fit">
                 <h1 className="text-5xl">Photography</h1>
             </div>
+
+            {/* Text and thumbnail */}
             <div className="
-                flex
+                flex flex-col md:flex-row
+                gap-3
             ">
                 <p className="
                     w-full
@@ -24,10 +33,29 @@ export default function PhotographySection({ section_id, section_className }: Se
                     Something to do with like documentation and organizing for fun
                 </p>
                 <div className="
-                    w-full h-full bg-amber-200
+                    hidden md:flex
+                    aspect-video
+                    w-full h-full
+                    border
+                    justify-center items-center
                 ">
-                    <img src="/personal/photo" alt="some picture" className=""/>
+                    <Image src="/personal/photo" alt="some picture" width={800} height={450}
+                    className="
+                        object-contain
+                        w-full h-full
+                    "/>
                 </div>
+            </div>
+            {/* 'Gallery' Thumbnails */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {galleryItems.map((item) => (
+                    <GalleryFrame
+                        key={item.name}
+                        thumbnail={item.thumbnail}
+                        name={item.name}
+                        href={item.href}
+                    />
+                ))}
             </div>
         </section>
     )

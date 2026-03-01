@@ -25,9 +25,10 @@ export default function LandingPageHeroSection({section_id, section_className}: 
             `}>
                 
                 {/* Name Plate */}
-                <div className="text-6xl flex flex-col gap-2">
-                    <h1 className="">Pun&nbsp;Phanasomburna</h1>
-                    <h1 className="">ปัณณ์ พรรณสมบูรณ์</h1>
+                <div className="text-6xl flex flex-row md:flex-col gap-2">
+                    <h1 className="">Pun <span className="hidden md:flex">Phanasomburna</span></h1>
+                    <h1 className="flex md:hidden"> - </h1>
+                    <h1 className="">ปัณณ์ <span className="hidden md:flex">พรรณสมบูรณ์</span></h1>
                 </div>
 
                 {/* Others */}

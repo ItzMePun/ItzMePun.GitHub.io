@@ -1,5 +1,6 @@
 import MyProfile from '@/lib/profile';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ProfileLinks } from '@/lib/links';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { SectionProps } from '@/lib/props';
@@ -77,10 +78,12 @@ export default async function AboutMeSection({section_id, section_className}: Se
                     key={ProfileLinks.personal.name}
                     href={ProfileLinks.personal.href}
                 >
-                    <img 
+                    <Image 
                         src={ProfileLinks.personal.icon}
                         alt={ProfileLinks.personal.name}
-                        className='w-15 aspect-square rotate-10'
+                        width={60}
+                        height={60}
+                        className='rotate-10'
                     />
                 </Link>
             </div>

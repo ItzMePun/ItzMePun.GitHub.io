@@ -1,5 +1,6 @@
 
 import { SectionProps } from "@/lib/props";
+import Image from "next/image";
 
 export default function CADSection({ section_id, section_className}: SectionProps) {
     return (
@@ -35,10 +36,12 @@ export default function CADSection({ section_id, section_className}: SectionProp
                         items-center
                         overflow-hidden
                         border
+                        relative
                     ">
-                        <img src="" alt="pic 1 - should be one of the ONSHAPE ones"
-                        className="
-                        "/>
+                        <Image src="/personal/cad/" alt="pic 1 - should be one of the ONSHAPE ones"
+                        fill
+                        className="object-contain"
+                        />
                     </div>
                     <div className="
                         h-[40%]
@@ -70,10 +73,12 @@ export default function CADSection({ section_id, section_className}: SectionProp
                         items-center
                         overflow-hidden
                         border
+                        relative
                     ">
-                        <img src="" alt="pic 2 - maybe video of japan building or chess board"
-                        className="
-                        "/>
+                        <Image src="/personal/cad/" alt="pic 2 - maybe video of japan building or chess board"
+                        fill
+                        className="object-contain"
+                        />
                     </div>
                 </div>
             </div>

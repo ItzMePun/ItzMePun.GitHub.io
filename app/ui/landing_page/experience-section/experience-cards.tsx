@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import { RecentExperiences } from "@/lib/recentExperience";
 
 export default async function ExperienceCards() {
@@ -44,12 +45,13 @@ export default async function ExperienceCards() {
                             justify-center
                             items-center
                             overflow-hidden
+                            relative
                         `}>
-                            <img 
+                            <Image 
                                 src={experience.thumbnail}
                                 alt={experience.employer}
-                                className={`
-                                `}
+                                fill
+                                className="object-contain"
                             />
                         </div>
                     </div>

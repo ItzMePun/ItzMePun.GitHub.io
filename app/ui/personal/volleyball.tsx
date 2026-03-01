@@ -1,4 +1,5 @@
 import { SectionProps } from "@/lib/props";
+import Image from "next/image";
 
 export default function VolleyballSection({section_id, section_className}: SectionProps) {
     return (
@@ -16,7 +17,7 @@ export default function VolleyballSection({section_id, section_className}: Secti
             </div>
 
             <div className="
-                flex
+                flex flex-col md:flex-row
                 justify-between
                 gap-10
             ">
@@ -24,8 +25,14 @@ export default function VolleyballSection({section_id, section_className}: Secti
                     w-full h-full
                     drop-shadow-2xl
                 ">
-                    <img src="/personal/volleyball/nottsGP.jpg"
-                    className="w-full h-full"/>
+                    <Image src="/personal/volleyball/nottsGP.jpg"
+                    alt="Volleyball Notts GP"
+                    width={500}
+                    height={500}
+                    className="
+                        object-cover object-center
+                        w-full h-full
+                    "/>
                 </div>
                 <div className="
                     w-full
@@ -40,7 +47,7 @@ export default function VolleyballSection({section_id, section_className}: Secti
             </div>
             
             <div className="
-                flex
+                flex flex-col-reverse md:flex-row
                 justify-between
                 gap-10
             ">
@@ -67,8 +74,11 @@ export default function VolleyballSection({section_id, section_className}: Secti
                         aspect-square
                         drop-shadow-lg
                         overflow-hidden
+                        w-full h-full
                     '>
-                        <img src="/personal/volleyball/spike.jpg"
+                        <Image src="/personal/volleyball/spike.jpg"
+                        alt="Spike Pic"
+                        fill
                         className="
                             w-full h-full
                             object-cover object-bottom
@@ -78,8 +88,11 @@ export default function VolleyballSection({section_id, section_className}: Secti
                         aspect-square
                         drop-shadow-lg
                         overflow-hidden
+                        w-full h-full
                     '>
-                        <img src="/personal/volleyball/fobisia.jpeg"
+                        <Image src="/personal/volleyball/fobisia.jpeg"
+                        alt="Spike Pic"
+                        fill
                         className="
                             w-full h-full
                             object-cover object-center

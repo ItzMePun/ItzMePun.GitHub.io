@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import { SkillsCardsProps } from "@/lib/props";
 
 export default function SkillsCards({ skillsList, className }: SkillsCardsProps) {
@@ -25,10 +26,12 @@ export default function SkillsCards({ skillsList, className }: SkillsCardsProps)
                     <div className="w-full text-center">
                         {skill.name}
                     </div>
-                    <img 
+                    <Image 
                         src={skill.icon}
                         alt={skill.name}
-                        className="h-fit aspect-square"
+                        width={100}
+                        height={100}
+                        className="h-fit"
                     />
                 </div>
             ))}

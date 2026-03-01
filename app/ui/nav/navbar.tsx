@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { NavLinks } from '@/lib/links';
 
 const links = Object.values(NavLinks).slice(1);
@@ -22,12 +23,13 @@ export default function NavBar() {
                 <Link
                     key={NavLinks.logo.name}
                     href={NavLinks.logo.href}
-                    className="flex h-16 aspect-square"
+                    className="flex h-16 aspect-square relative"
                 >
-                    <img 
+                    <Image 
                         src={NavLinks.logo.icon}
                         alt={NavLinks.logo.name}
-                        className='w-full h-full'
+                        fill
+                        className='object-contain'
                     />
                 </Link>
             </div>
@@ -41,12 +43,13 @@ export default function NavBar() {
                     <Link
                         key={link.name}
                         href={link.href}
-                        className="flex h-16 aspect-square"
+                        className="flex h-16 aspect-square relative"
                     >
-                        <img 
+                        <Image 
                             src={link.icon} 
                             alt={link.name}
-                            className='w-full h-full'
+                            fill
+                            className='object-contain'
                         />
                     </Link>
                 ))}

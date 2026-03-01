@@ -3,6 +3,7 @@ import ProjectThumbnail from "@/app/ui/projects_page/project-thumbnail";
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { NavLinks } from "@/lib/links";
 import Link from 'next/link';
+import Image from 'next/image';
 import { SectionProps } from "@/lib/props";
 import { getProjectByName } from "@/lib/projects";
 
@@ -52,10 +53,12 @@ export default async function FeaturedProjectsSection({section_id, section_class
                     key={NavLinks.projects.name}
                     href={NavLinks.projects.href}
                 >
-                    <img 
+                    <Image 
                         src={NavLinks.projects.icon}
                         alt={NavLinks.projects.name}
-                        className=""
+                        width={40}
+                        height={40}
+                        className="w-full h-full"
                     />
                 </Link>
             </div>

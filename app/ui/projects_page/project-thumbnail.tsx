@@ -1,5 +1,6 @@
 import { ProjectThumbnailProps } from "@/lib/props";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectThumbnail({ slug, project, className }: ProjectThumbnailProps) {
 
@@ -66,18 +67,19 @@ export default function ProjectThumbnail({ slug, project, className }: ProjectTh
 
                 <div className={`
                     mt-auto
-                    aspect-4/3 border
-                    border-black/20 bg-white/80
+                    aspect-4/3 bord
                     flex
                     items-center
                     justify-center
                     overflow-clip
+                    relative
                 `}>
                     {project?.thumbnail ? (
-                        <img
+                        <Image
                             src={project.thumbnail}
                             alt={project?.name ?? slug}
-                            className="w-auto text-black aspect-4/3"
+                            fill
+                            className="object-cover h-full w-full"
                         />
                     ) : null}
                 </div>
