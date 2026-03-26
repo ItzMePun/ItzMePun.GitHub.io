@@ -1,8 +1,8 @@
 ---
 name: "EEEBot: Y1 CW"
-thumbnail: "/project/eeebot.JPEG"
+thumbnail: "/project/eeebot/thumbnail.JPEG"
 summary: The EEEBot is the construction project I worked on during the first year my Electronic and Computer Engineering degree. The EEEBot is a robot that initially started as a simple robot controlled by an ESP32 and throughout the course of the year has been improved upon, giving it the capabilities to perform maze navigation, line following and symbol recognition on top of remote control via online dashboard
-pictures:
+pictures: /project/eeebot/
 ---
 # The Introduction
 The EEEBot is a coursework project for the first year of my Electronic and Computer Engineering degree. The EEEBot is a robotic car that is controlled by an ESP32. The project spanend the course of the academic year and was work on in 5 separate lab weeks. From start to finish, it began as a simple car that can be controlled by a pre loaded program and given more capabilities through various sensors along the way. Prior to this project I have had very limited experiece with electronic components and while I understood the theory, I was lacking in practical experience. The project helped me develop my skills and will hopefully help me with various projects in the future.

@@ -4,7 +4,7 @@ employer: Spice Roads
 startDate: 2025-06-16
 endDate: 2025-09-08
 summary: Help develop and build backend frame work
-thumbnail: 
+thumbnail: /profile/experience/spiceroads_logo.png
 ---
 
 ## Description

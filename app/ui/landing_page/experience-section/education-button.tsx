@@ -1,30 +1,19 @@
 'use client';
 
-import { useEffect } from 'react';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
-type EducationButtonProps = {
-  onOpenChange?: (open: boolean) => void;
-};
-
 function EducationButtonBody({
-	open,
-	onOpenChange,
+  open,
 }: {
 	open: boolean;
-	onOpenChange?: (open: boolean) => void;
 }) {
-	useEffect(() => {
-		onOpenChange?.(open);
-	}, [open, onOpenChange]);
-	
 	const educationCardClassNames = `
 		w-full
 		flex flex-col 
 		border p-3 
 		rounded-lg 
-		bg-gray-200
+    bg-gray-200
 	`;
 
   return (
@@ -40,7 +29,7 @@ function EducationButtonBody({
         />
       </DisclosureButton>
 
-      <DisclosurePanel className="mt-4 w-full">
+      <DisclosurePanel className="absolute right-0 top-full mt-3 z-50 w-[90vw] md:w-4xl">
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* High school */}
           <div className={educationCardClassNames}>
@@ -85,11 +74,11 @@ function EducationButtonBody({
   );
 }
 
-export default function EducationButton({ onOpenChange }: EducationButtonProps) {
+export default function EducationButton() {
   return (
-    <Disclosure as="div" className="w-full">
+    <Disclosure as="div" className="relative inline-block">
       {({ open }) => (
-        <EducationButtonBody open={open} onOpenChange={onOpenChange} />
+        <EducationButtonBody open={open} />
       )}
     </Disclosure>
   );

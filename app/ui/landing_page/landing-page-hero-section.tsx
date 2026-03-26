@@ -7,10 +7,11 @@ export default function LandingPageHeroSection({section_id, section_className}: 
             id={section_id}
             className={`
                 bg-light-color-1
-                h-screen w-full 
+                h-dvh w-full
                 flex justify-around 
-                px-[7%] py-7
-                pt-30
+                px-9 py-7
+                md:px-15
+                pt-[calc(var(--navbar-height)+2rem)]
                 ${section_className}
         `}>
 
@@ -21,18 +22,17 @@ export default function LandingPageHeroSection({section_id, section_className}: 
                 w-full md:w-[70%]
                 flex flex-col justify-center
                 gap-15
-
             `}>
                 
                 {/* Name Plate */}
-                <div className="text-6xl flex flex-row md:flex-col gap-2">
-                    <h1 className="">Pun <span className="hidden md:flex">Phanasomburna</span></h1>
+                <div className="text-6xl flex flex-row md:flex-col gap-5 md:gap-0">
+                    <h1 className="">Pun <span className="hidden md:inline-flex">Phanasomburna</span></h1>
                     <h1 className="flex md:hidden"> - </h1>
-                    <h1 className="">ปัณณ์ <span className="hidden md:flex">พรรณสมบูรณ์</span></h1>
+                    <h1 className="">ปัณณ์ <span className="hidden md:inline-flex">พรรณสมบูรณ์</span></h1>
                 </div>
 
                 {/* Others */}
-                <div className="text-2xl">
+                <div className="text-2xl flex flex-col gap-10 py-5">
                     
                     {/* Learn more */}
                     <div className="pl-10 -rotate-3">
@@ -50,7 +50,7 @@ export default function LandingPageHeroSection({section_id, section_className}: 
             </div>
 
             {/* Right side - Profile image */}
-            <div className="bg-amber hidden md:block">
+            <div className="hidden md:block">
                 {/* red square */}
                 <div className={`
                     w-40

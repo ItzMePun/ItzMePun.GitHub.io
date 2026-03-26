@@ -14,8 +14,9 @@ export default async function AboutMeSection({section_id, section_className}: Se
             w-full 
             flex flex-col
             justify-around 
-            px-25 py-10
-            pt-30
+            px-10 py-10
+            md:px-25
+            pt-[calc(var(--navbar-height)+2rem)]
             gap-15 md:gap-5
             ${section_className}
         `}>
@@ -25,14 +26,14 @@ export default async function AboutMeSection({section_id, section_className}: Se
                 w-fit
                 flex-col md:flex-row
                 items-center
-                gap-5 md:gap-0
+                gap-15 md:gap-0
             `}>
                 {/* Who am i? */}
                 <header className={`
                     w-full md:w-[55%]
                     flex flex-col
                     gap-5
-                    p-5
+                    p-0 md:p-5
                 `}>
                     <h1 className="text-5xl">About me</h1>
                     <p>{profile.about}</p>

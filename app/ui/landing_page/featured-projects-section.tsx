@@ -45,9 +45,11 @@ export default async function FeaturedProjectsSection({section_id, section_class
             </div>
             <div className={`
                 flex justify-center items-center
-                gap-[3%]    
+                flex-col
+                sm:flex-row
+                gap-[3%]
             `}>
-                <p>See all my projects here</p>
+                <p className="">See all my projects here</p>
                 <ArrowRightIcon className="h-7 aspect-square hidden sm:block"/>
                 <Link
                     key={NavLinks.projects.name}
@@ -56,9 +58,9 @@ export default async function FeaturedProjectsSection({section_id, section_class
                     <Image 
                         src={NavLinks.projects.icon}
                         alt={NavLinks.projects.name}
-                        width={40}
-                        height={40}
-                        className="w-full h-full"
+                        width={100}
+                        height={100}
+                        className="w-full aspect-square sm:w-40"
                     />
                 </Link>
             </div>

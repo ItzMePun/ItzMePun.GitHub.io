@@ -9,7 +9,7 @@ export default async function ExperienceSection({section_id, section_className}:
             w-full 
             flex flex-col
             justify-around 
-            px-25 py-10
+            px-10 md:px-25 py-10
             gap-10
             ${section_className}
         `}>

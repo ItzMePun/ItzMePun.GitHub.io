@@ -37,9 +37,9 @@ function normalizePictures(pictures: unknown): string[] {
 function buildProject(data: Record<string, unknown>, content: string, slug: string): ProjectProps {
 	return {
 		slug,
-		name: String(data["name"] ?? ""),
-		thumbnail: String(data["thumbnail"] ?? ""),
-		summary: String(data["summary"] ?? ""),
+		name: String(data["name"]),
+		thumbnail: String(data["thumbnail"]),
+		summary: String(data["summary"]),
 		pictures: normalizePictures(data["pictures"]),
 		content,
 	};

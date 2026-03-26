@@ -4,7 +4,7 @@ employer: Trinity Securities
 startDate: 2024-08-12
 endDate: 2024-09-07
 summary: Built ML model to predict market movements
-thumbnail: 
+thumbnail: /profile/experience/trinity_logo.png
 ---
 
 ## Description
