@@ -68,23 +68,25 @@ export default async function AboutMeSection({section_id, section_className}: Se
             </div>
             <div className={`
                 flex
+                flex-col sm:flex-row
                 justfify-start
                 items-center
                 gap-5
                 pl-[5%]
             `}>
                 <p>less professional things about me</p>
-                <ArrowRightIcon className='w-10 rotate'/>
+                <ArrowRightIcon className='w-10 rotate-90 sm:rotate-0'/>
                 <Link
                     key={ProfileLinks.personal.name}
                     href={ProfileLinks.personal.href}
+                    className="w-50 sm:w-auto sm:h-30"
                 >
                     <Image 
                         src={ProfileLinks.personal.icon}
                         alt={ProfileLinks.personal.name}
                         width={60}
                         height={60}
-                        className='rotate-10'
+                        className='justify-self-end w-full h-auto sm:w-auto sm:h-full aspect-square rotate-10'
                     />
                 </Link>
             </div>

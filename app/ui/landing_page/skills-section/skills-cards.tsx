@@ -31,7 +31,7 @@ export default function SkillsCards({ skillsList, className }: SkillsCardsProps)
                         alt={skill.name}
                         width={100}
                         height={100}
-                        className="h-fit"
+                        className="w-fit aspect-square"
                     />
                 </div>
             ))}

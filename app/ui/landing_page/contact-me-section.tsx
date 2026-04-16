@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent } from "react";
+import clsx from "clsx";
 import { contactInfo } from "@/lib/contact-info";
 import Link from "next/link";
 import { SectionProps } from "@/lib/props";
@@ -29,19 +30,18 @@ function handleEmailSubmit(event: FormEvent<HTMLFormElement>) {
 
 export default function ContactMeSection({ section_id, section_className }: SectionProps) {
     return (
-        <section id={section_id} className={`
-            text-[#EAE0C8]
-            flex flex-col md:flex-row
-            scroll-mt-20
-            ${section_className}
-        `}>
-            <div className="
-                px-[10%] md:px-[5%] py-15 pb-10
-                w-full md:w-1/2
-                
-                bg-light-color-2
-                flex flex-col
-            ">
+        <section id={section_id} className={clsx(
+            "text-[#EAE0C8]",
+            "flex flex-col md:flex-row",
+            "scroll-mt-20",
+            section_className
+        )}>
+            <div className={clsx(
+                "px-[10%] md:px-[5%] py-15 pb-10",
+                "w-full md:w-1/2",
+                "bg-light-color-2",
+                "flex flex-col"
+            )}>
                 <div className="text-4xl"><b>Get in touch</b></div>
                 <div>
                     I'm currently looking for work - specifically internship opportunities - 
@@ -83,12 +83,12 @@ export default function ContactMeSection({ section_id, section_className }: Sect
                 </div>
             </div>
 
-            <div className="
-                px-[10%] md:px-[5%] py-15 pb-10
-                w-full md:w-1/2
-                h-fit
-                bg-dark-color-2
-            ">
+            <div className={clsx(
+                "px-[10%] md:px-[5%] py-15 pb-10",
+                "w-full md:w-1/2",
+                "h-fit",
+                "bg-dark-color-2"
+            )}>
                 <form
                     className="flex flex-col gap-3"
                     onSubmit={handleEmailSubmit}
@@ -152,12 +152,12 @@ export default function ContactMeSection({ section_id, section_className }: Sect
                     <div className="flex justify-end items-center">
                         <button
                             type="submit"
-                            className="
-                                border rounded-2xl
-                                px-4 py-2
-                                bg-contrast-color/80
-                                hover:cursor-pointer
-                            "
+                            className={clsx(
+                                "border rounded-2xl",
+                                "px-4 py-2",
+                                "bg-contrast-color/80",
+                                "hover:cursor-pointer"
+                            )}
                         >
                             Send message
                         </button>
