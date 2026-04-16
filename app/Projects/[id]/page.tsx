@@ -1,11 +1,11 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { getProjectByName } from "@/lib/projects";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import ProjectHeroImage from "@/app/ui/projects/project-hero-image";
 
 export async function generateStaticParams(): Promise<Array<{ id: string }>> {
     const projectsDir = path.join(process.cwd(), "content", "projects");
@@ -45,12 +45,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                 overflow-hidden
                 relative
             `}>
-                <Image 
-                    src={project?.thumbnail ?? "/placeholder.jpg"}
-                    alt={project.name}
-                    fill
-                    className="object-contain"
-                />
+                <ProjectHeroImage src={project?.thumbnail} alt={project.name} />
             </section>
             <section className="
                 w-full

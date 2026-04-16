@@ -1,5 +1,8 @@
-import Image from "next/image";
+'use client'
+
 import Link from "next/link";
+import { CldImage } from "next-cloudinary";
+import { toCloudinaryPublicId } from "@/lib/cloudinary";
 
 interface GalleryItemProps {
     thumbnail: string;
@@ -19,12 +22,16 @@ export default function GalleryFrame({ thumbnail, name, href, className }: Galle
             `}
         >
             <div className="border-2 border-dark-color-1 hover:scale-105 transition-transform duration-300">
-                <Image
-                    src={thumbnail}
+                <CldImage
+                    src={toCloudinaryPublicId(thumbnail)}
                     alt={name}
                     width={500}
                     height={500}
                     className="w-auto h-auto"
+                    crop={{
+                        type: "auto",
+                        source: true,
+                    }}
                 />
             </div>
         </Link>

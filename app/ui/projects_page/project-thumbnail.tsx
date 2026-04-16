@@ -1,6 +1,9 @@
+"use client";
+
 import { ProjectThumbnailProps } from "@/lib/props";
 import Link from "next/link";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
+import { toCloudinaryPublicId } from "@/lib/cloudinary";
 
 export default function ProjectThumbnail({ slug, project, className }: ProjectThumbnailProps) {
 
@@ -75,11 +78,15 @@ export default function ProjectThumbnail({ slug, project, className }: ProjectTh
                     relative
                 `}>
                     {project?.thumbnail ? (
-                        <Image
-                            src={project.thumbnail}
+                        <CldImage
+                            src={toCloudinaryPublicId(project.thumbnail)}
                             alt={project?.name ?? slug}
                             fill
                             className="object-cover h-full w-full"
+                            crop={{
+                                type: "auto",
+                                source: true,
+                            }}
                         />
                     ) : null}
                 </div>
