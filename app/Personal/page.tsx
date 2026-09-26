@@ -4,7 +4,6 @@ import VolleyballSection from '@/app/ui/personal/volleyball';
 import MusicSection from '@/app/ui/personal/music';
 import VideoSection from '@/app/ui/personal/video';
 import CADSection from '@/app/ui/personal/cad-design';
-import PhotographySection from '@/app/ui/personal/photography';
 
 export default async function Page() {
     return (
@@ -14,7 +13,6 @@ export default async function Page() {
             <MusicSection section_id='music'/>
             <VideoSection section_id='video'/>
             <CADSection section_id='cad'/>
-            <PhotographySection section_id='photo'/>
         </main>
     );
 }
