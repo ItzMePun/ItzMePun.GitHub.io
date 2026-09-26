@@ -1,4 +1,3 @@
-
 import { SectionProps } from "@/lib/props";
 import { getGalleryLinks } from "@/lib/gallery";
 import GalleryFrame from "@/app/ui/personal/photography/gallery-frame";

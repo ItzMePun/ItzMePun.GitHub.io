@@ -3,9 +3,15 @@ import path from "node:path";
 import matter from "gray-matter";
 
 export interface GalleryLink {
+    slug: string;
     name: string;
     thumbnail: string;
     href: string;
+}
+
+function getGallerySlugFromThumbnail(thumbnail: string): string {
+    const match = thumbnail.match(/\/personal\/photography\/([^/]+)\//i);
+    return match?.[1] ?? "";
 }
 
 function normalizeGalleries(galleries: unknown): GalleryLink[] {
@@ -19,13 +25,15 @@ function normalizeGalleries(galleries: unknown): GalleryLink[] {
                 const obj = item as Record<string, unknown>;
                 const name = String(obj.name ?? "");
                 const thumbnail = String(obj.thumbnail ?? "");
+                const slug = getGallerySlugFromThumbnail(thumbnail);
 
-                if (!name || !thumbnail) return null;
+                if (!name || !thumbnail || !slug) return null;
 
                 return {
+                    slug,
                     name,
                     thumbnail,
-                    href: `/personal/photography/${name}`,
+                    href: `/Personal/${slug}`,
                 };
             }
             return null;
