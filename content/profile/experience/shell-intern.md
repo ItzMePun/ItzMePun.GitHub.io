@@ -2,7 +2,7 @@
 role: Distribution Operations Intern
 employer: Shell
 startDate: 2026-07-01
-endDate: 2024-08-30
+endDate: 2026-08-30
 summary: Optimize electrical work planning
 thumbnail: /profile/experience/shell_logo.png
 ---

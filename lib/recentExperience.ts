@@ -54,11 +54,11 @@ export async function RecentExperiences(limit = 3): Promise<Experience[]> {
             .slice(0, limit)
             .map(({ _sortDate, ...rest }) => rest); // Remove the computed sort field
         
-        // console.log(recentExperiences);
+        console.log(recentExperiences);
 
         return recentExperiences;
     } catch (error) {
-        console.error('Error reading experiences:', error);
+         console.error('Error reading experiences:', error);
         return [];
     }
 }
